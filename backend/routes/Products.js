@@ -12,9 +12,7 @@ router.route('/add').post((req, res) => {
   const name = req.body.name;
   const vendor_name = req.body.vendor_name;
   const price = Number(req.body.price);
-
-  const newProduct = new Product({sku, name, vendor_name, price});
-
+  const newProduct = new Product({ sku, name, vendor_name, price });
   newProduct.save()
     .then(() => res.json('Product added!'))
     .catch(err => res.status(400).json('Error: ' + err));
@@ -35,9 +33,10 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
   Product.findById(req.params.id)
     .then(product => {
-      product.name = req.body.name;
-      product.location = req.body.location;
-
+      product.sku = req.body.sku;
+      product.name = req.body.name; 
+      product.vendor_name = req.body.vendor_name;
+      product.price = req.body.price;
       product.save()
         .then(() => res.json('Product updated!'))
         .catch(err => res.status(400).json('Error: ' + err));

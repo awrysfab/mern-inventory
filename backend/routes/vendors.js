@@ -34,7 +34,7 @@ router.route('/update/:id').post((req, res) => {
   Vendor.findById(req.params.id)
     .then(vendor => {
       vendor.name = req.body.name;
-      vendor.location = req.body.location;
+      vendor.address = req.body.address;
 
       vendor.save()
         .then(() => res.json('Vendor updated!'))
