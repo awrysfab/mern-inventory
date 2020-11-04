@@ -35,6 +35,7 @@ export default class AddVendor extends Component {
       name: '',
       address: ''
     })
+    window.location = '/vendors';
   }
   render() {
     return (

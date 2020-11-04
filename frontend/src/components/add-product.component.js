@@ -68,6 +68,8 @@ export default class AddProduct extends Component {
       vendor_name: '',
       price: 0,
     })
+    window.location = '/';
+
   }
 
   render() {

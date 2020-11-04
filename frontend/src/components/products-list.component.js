@@ -9,7 +9,8 @@ const Product = props => (
     <td>{props.product.vendor_name}</td>
     <td>{props.product.price}</td>
     <td>
-      <Link to={"/edit-product/" + props.product._id}>edit</Link> | <a href="/" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
+      <Link to={"/edit-product/" + props.product._id}>edit</Link> &nbsp;
+      <Link to={"/delete-product/" + props.product._id}>Delete</Link>
     </td>
   </tr>
 )

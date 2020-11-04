@@ -7,7 +7,8 @@ const Vendor = props => (
     <td>{props.Vendor.name}</td>
     <td>{props.Vendor.address}</td>
     <td>
-      <Link to={"/edit-vendor/" + props.Vendor._id}>edit</Link> | <a href="/" onClick={() => { props.deleteVendor(props.Vendor._id) }}>delete</a>
+      <Link to={"/edit-vendor/" + props.Vendor._id}>edit</Link> &nbsp; 
+      <Link to={"/delete-vendor/" + props.Vendor._id}>delete</Link>
     </td>
   </tr>
 )
